@@ -398,7 +398,9 @@ impl Ui {
                 w.set_visible(true);
                 w.set_minimized(false);
                 w.focus_window();
+                w.request_redraw();
             });
+            app.window().request_redraw();
         }
     }
 

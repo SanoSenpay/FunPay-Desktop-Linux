@@ -45,7 +45,7 @@ mod imp {
             .with_tooltip("FunPay Tools")
             .with_icon(icon)
             .with_menu(Box::new(menu))
-            .with_menu_on_left_click(false)
+            .with_menu_on_left_click(cfg!(target_os = "linux"))
             .build();
         match built {
             Ok(t) => T.with(|c| *c.borrow_mut() = Some(Tray { _icon: t, open: open.id().clone(), quit: quit.id().clone() })),
